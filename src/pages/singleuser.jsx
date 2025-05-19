@@ -29,6 +29,7 @@ const GettingData = async (Uid) => {
   const data = await getDocs(query(collection(db, "users"), where("Userid", "==", Uid)));
   const Receiverdata = await getDocs(query(collection(db, "users"), where("Userid", "==", sendToId)));
 
+  
   const name = data.docs[0].data().Name;
   const Receivername = Receiverdata.docs.length > 0 ? Receiverdata.docs[0].data().Name : "Unknown User";
 
