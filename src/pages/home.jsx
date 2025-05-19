@@ -1,75 +1,79 @@
-import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { auth, db } from '../utils/firebase.config'
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router'
-import Navbar from '../components/Navbar'
-import { collection, getDocs, query, where } from 'firebase/firestore'
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth, db } from '../utils/firebase.config';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import Navbar from '../components/Navbar';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 
 const Home = () => {
-  const [Uid, setUid] = React.useState("")
-  const [UserName, setUserName] = React.useState("")
-  const navigate = useNavigate()
+  const [Uid, setUid] = React.useState("");
+  const [UserName, setUserName] = React.useState("");
+  const navigate = useNavigate();
 
   const GettingData = async (Uid) => {
     const data = await getDocs(query(collection(db, "users"), where("Userid", "==", Uid)));
     const name = data.docs[0]?.data()?.Name;
-    setUserName(name)
-  }
+    setUserName(name);
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if(user) {
-        setUid(user.uid)
-        GettingData(user.uid)
+      if (user) {
+        setUid(user.uid);
+        GettingData(user.uid);
       } else {
-        navigate("./login")
+        navigate("./login");
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const handleLogout = () => {
     signOut(auth)
-      .then(() => alert("Sign out successful"))
-      .catch((error) => alert(error.message))
-  }
+      .then(() => alert("Signed out successfully"))
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <>
       <Navbar Username={UserName} LogOutFunc={handleLogout} />
-      
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+      <div className="min-h-screen bg-gradient-to-br from-ivory-50 to-lavender-50">
+        <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-800 mb-6">
-              Welcome back, {UserName}!
+            {/* Header with refined typography */}
+            <h1 className="text-4xl font-medium text-charcoal-black mb-4">
+              Welcome back, <span className="text-muted-green">{UserName}</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Start chatting with your friends today
+            <p className="text-lg text-warm-beige mb-12">
+              Your conversations await
             </p>
-            
-            <div className="max-w-2xl mx-auto mb-12">
-              <img 
-                src="https://illustrations.popsy.co/amber/digital-nomad.svg" 
+
+            {/* Illustration with soft shadow */}
+            <div className="max-w-md mx-auto mb-12 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+              <img
+                src="https://illustrations.popsy.co/amber/digital-nomad.svg"
                 alt="Chat illustration"
                 className="w-full h-auto"
               />
             </div>
-            
+
+            {/* Primary CTA button (lavender accent) */}
             <button
               onClick={() => navigate("/users")}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-8 rounded-lg shadow-md transition duration-300"
+              className="bg-soft-lavender hover:bg-opacity-90 text-ivory-white font-medium py-3 px-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
             >
-              Go to Users
+              Browse Contacts
             </button>
-            
-            <p className="mt-6 text-gray-500">
-              Select friends to start your conversation
+
+            {/* Subtle prompt */}
+            <p className="mt-8 text-sm text-charcoal-black opacity-70">
+              Tap to reconnect or start new
             </p>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;  
