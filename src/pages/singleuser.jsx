@@ -6,9 +6,10 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth, db } from '../utils/firebase.config'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { useParams } from 'react-router'
-import { addDoc, Timestamp } from 'firebase/firestore'
+import { addDoc, Timestamp, orderBy } from 'firebase/firestore'
 import { doc } from 'firebase/firestore'
 import { getDoc } from 'firebase/firestore'
+import { onSnapshot } from 'firebase/firestore'
 
 const Singleuser = ()=>{
 
@@ -38,7 +39,8 @@ const GettingData = async (Uid) => {
   const msgsQuery = query(
     collection(db, "messages"),
     where("CurrentUserid", "in", [Uid, sendToId]),
-    where("RecieverId", "in", [Uid, sendToId])
+    where("RecieverId", "in", [Uid, sendToId]),
+     orderBy("time", "asc")
   );
 
  
@@ -55,21 +57,29 @@ const GettingData = async (Uid) => {
   return unsubscribe;
 };
 
-useEffect(()=>{
+useEffect(() => {
+  let unsubscribe;
 
-     onAuthStateChanged(auth , (user)=>{
-              if(user){
-                setUid(user.uid)
-                  console.log("User is logged in")
-                  GettingData(user.uid,)
-              }else{
-                navigate("./login")
-                  console.log("User is logged out")
-              }
-     }
-    )
+  const listen = async () => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setUid(user.uid);
+        console.log("User is logged in");
+        unsubscribe = await GettingData(user.uid);
+      } else {
+        navigate("./login");
+        console.log("User is logged out");
+      }
+    });
+  };
 
-},[sendToId])
+  listen();
+
+  return () => {
+    if (unsubscribe) unsubscribe();
+  };
+}, [sendToId]);
+
 
 const SendingData = async ()=>{
     await addDoc(collection (db, "messages"), {
@@ -89,7 +99,7 @@ return (
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                     <div className="p-6 border-b">
-                        <h1 className="text-2xl font-bold text-gray-800">Chat with {ReceiverName}</h1>
+                        <h1 className="text-2xl font-bold text-gray-800">Chatting with {ReceiverName}</h1>
                     </div>
                     
                     {/* Messages Container */}
