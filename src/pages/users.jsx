@@ -124,28 +124,28 @@ const Users = () => {
                                     ))
                                 ) : (
                                     <div className="p-10 text-center relative">
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-15 z-0">
-                                            <img 
-                                                src="https://illustrations.popsy.co/amber/chatting.svg" 
-                                                alt="Empty state illustration"
-                                                className="w-64 h-auto"
-                                            />
-                                        </div>
-                                        <div className="relative z-10">
-                                            <div className="inline-block p-4 rounded-full bg-purple-100/50 mb-4 shadow-inner">
-                                                <svg className="h-8 w-8 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
-                                                </svg>
-                                            </div>
-                                            <p className="text-purple-700/70">Your contact list is empty</p>
-                                            <button 
-                                                onClick={() => navigate('/users/add')}
-                                                className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-400 to-purple-500 text-white rounded-full shadow-md hover:shadow-lg transition-all"
-                                            >
-                                                Invite Friends
-                                            </button>
-                                        </div>
-                                    </div>
+    <div className="absolute inset-0 flex items-center justify-center opacity-15 z-0">
+        <img 
+            src="https://illustrations.popsy.co/amber/chatting.svg" 
+            alt="Loading illustration"
+            className="w-64 h-auto opacity-30"
+        />
+    </div>
+    <div className="relative z-10">
+        <div className="inline-block p-4 rounded-full bg-purple-100/50 mb-4 shadow-inner">
+            <div className="h-8 w-8">
+                <svg className="animate-spin h-8 w-8 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+        </div>
+        <p className="text-purple-700/70">Loading contacts...</p>
+        <div className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-400/30 to-purple-500/30 text-transparent rounded-full shadow-md inline-block">
+            Loading...
+        </div>
+    </div>
+</div>
                                 )}
                             </div>
                         </div>

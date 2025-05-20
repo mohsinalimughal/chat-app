@@ -5,18 +5,18 @@ const Navbar = ({ LogOutFunc, Username }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-ivory-white bg-opacity-90 backdrop-blur-md shadow-sm border-b border-soft-lavender border-opacity-20">
+    <nav className="bg-white bg-opacity-90 backdrop-blur-md shadow-sm border-b border-purple-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo/Username */}
           <div className="flex-shrink-0 flex items-center">
             <Link 
               to="/" 
-              className="text-xl font-medium text-charcoal-black flex items-center hover:text-soft-lavender transition duration-300"
+              className="text-xl font-medium text-purple-900 flex items-center hover:text-purple-600 transition duration-300"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
-                className="h-6 w-6 mr-2 text-muted-green" 
+                className="h-6 w-6 mr-2 text-purple-500" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
@@ -37,26 +37,26 @@ const Navbar = ({ LogOutFunc, Username }) => {
             <div className="ml-10 flex items-center space-x-2">
               <Link
                 to="/"
-                className="px-4 py-2 rounded-lg text-sm font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 hover:text-soft-lavender transition duration-300"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-purple-800 hover:bg-purple-50 hover:text-purple-600 transition duration-300"
               >
                 Home
               </Link>
               <Link
                 to="/users"
-                className="px-4 py-2 rounded-lg text-sm font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 hover:text-soft-lavender transition duration-300"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-purple-800 hover:bg-purple-50 hover:text-purple-600 transition duration-300"
               >
                 Users
               </Link>
               <Link
                 to="/about"
-                className="px-4 py-2 rounded-lg text-sm font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 hover:text-soft-lavender transition duration-300"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-purple-800 hover:bg-purple-50 hover:text-purple-600 transition duration-300"
               >
                 About
               </Link>
               {Username ? (
                 <button
                   onClick={LogOutFunc}
-                  className="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-soft-lavender bg-opacity-90 text-ivory-white hover:bg-opacity-100 shadow-sm transition duration-300"
+                  className="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-md transition duration-300"
                 >
                   Logout
                 </button>
@@ -64,13 +64,13 @@ const Navbar = ({ LogOutFunc, Username }) => {
                 <>
                   <Link
                     to="/login"
-                    className="px-4 py-2 rounded-lg text-sm font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 transition duration-300"
+                    className="px-4 py-2 rounded-lg text-sm font-medium text-purple-800 hover:bg-purple-50 transition duration-300"
                   >
                     Login
                   </Link>
                   <Link
                     to="/register"
-                    className="px-4 py-2 rounded-lg text-sm font-medium bg-soft-lavender bg-opacity-90 text-ivory-white hover:bg-opacity-100 shadow-sm transition duration-300"
+                    className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-md transition duration-300"
                   >
                     Register
                   </Link>
@@ -83,10 +83,10 @@ const Navbar = ({ LogOutFunc, Username }) => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-lg hover:bg-soft-lavender hover:bg-opacity-10 focus:outline-none transition duration-300"
+              className="inline-flex items-center justify-center p-2 rounded-lg hover:bg-purple-50 focus:outline-none transition duration-300"
             >
               <svg
-                className="h-6 w-6 text-charcoal-black"
+                className="h-6 w-6 text-purple-800"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -112,27 +112,27 @@ const Navbar = ({ LogOutFunc, Username }) => {
         </div>
       </div>
 
-      {/* Mobile Menu (Glassmorphism effect) */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-ivory-white bg-opacity-95 backdrop-blur-md border-b border-soft-lavender border-opacity-20">
+        <div className="md:hidden bg-white bg-opacity-95 backdrop-blur-md border-b border-purple-100">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               to="/"
-              className="block px-4 py-3 rounded-lg text-base font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 transition duration-300"
+              className="block px-4 py-3 rounded-lg text-base font-medium text-purple-800 hover:bg-purple-50 transition duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/users"
-              className="block px-4 py-3 rounded-lg text-base font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 transition duration-300"
+              className="block px-4 py-3 rounded-lg text-base font-medium text-purple-800 hover:bg-purple-50 transition duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               Users
             </Link>
             <Link
               to="/about"
-              className="block px-4 py-3 rounded-lg text-base font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 transition duration-300"
+              className="block px-4 py-3 rounded-lg text-base font-medium text-purple-800 hover:bg-purple-50 transition duration-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
@@ -143,7 +143,7 @@ const Navbar = ({ LogOutFunc, Username }) => {
                   LogOutFunc();
                   setMobileMenuOpen(false);
                 }}
-                className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium bg-soft-lavender bg-opacity-90 text-ivory-white hover:bg-opacity-100 shadow-sm transition duration-300"
+                className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-md transition duration-300"
               >
                 Logout
               </button>
@@ -151,14 +151,14 @@ const Navbar = ({ LogOutFunc, Username }) => {
               <>
                 <Link
                   to="/login"
-                  className="block px-4 py-3 rounded-lg text-base font-medium text-charcoal-black hover:bg-soft-lavender hover:bg-opacity-10 transition duration-300"
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-purple-800 hover:bg-purple-50 transition duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="block px-4 py-3 rounded-lg text-base font-medium bg-soft-lavender bg-opacity-90 text-ivory-white hover:bg-opacity-100 shadow-sm transition duration-300"
+                  className="block px-4 py-3 rounded-lg text-base font-medium bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-md transition duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Register
