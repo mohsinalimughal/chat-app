@@ -18,7 +18,7 @@ const Users = () => {
 
     const GettingData = async (Uid) => {
         const data = await getDocs(query(collection(db, "users"), where("Userid", "==", Uid)));
-        const allUsers = await getDocs(query(collection(db, "users")));
+        const allUsers = await getDocs(query(collection(db, "users"), where("Userid", "!=", Uid )));
         const allUsersData = allUsers.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
         setUsers(allUsersData)
         const name = data.docs[0]?.data()?.Name;
