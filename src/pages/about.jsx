@@ -113,7 +113,7 @@ function About() {
         <div className="text-center">
           <p className="text-purple-700 mb-6">Have suggestions or want to contribute?</p>
           <a 
-            href="mailto:mohsinali1699@gmail.com" 
+            href="mailto:mohsinalimughalofficial786@gmail.com" 
             className="inline-block bg-gradient-to-r from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white font-medium py-3 px-8 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
           >
             Contact Me
