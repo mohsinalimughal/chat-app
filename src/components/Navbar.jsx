@@ -53,29 +53,14 @@ const Navbar = ({ LogOutFunc, Username }) => {
               >
                 About
               </Link>
-              {Username ? (
+              
                 <button
                   onClick={LogOutFunc}
                   className="ml-2 px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-md transition duration-300"
                 >
                   Logout
                 </button>
-              ) : (
-                <>
-                  <Link
-                    to="/login"
-                    className="px-4 py-2 rounded-lg text-sm font-medium text-purple-800 hover:bg-purple-50 transition duration-300"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    to="/register"
-                    className="px-4 py-2 rounded-lg text-sm font-medium bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-md transition duration-300"
-                  >
-                    Register
-                  </Link>
-                </>
-              )}
+  
             </div>
           </div>
 
