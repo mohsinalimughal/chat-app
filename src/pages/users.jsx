@@ -40,18 +40,17 @@ const Users = () => {
         <>
             <Navbar Username={UserName} />
             
-            <div className="min-h-screen bg-[#faf8ff] relative overflow-hidden">
+            <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100 relative overflow-hidden">
                 {/* Full-page background illustration */}
-<div className="absolute inset-0 z-0 opacity-15">
-  <div className="absolute top-0 left-0 w-fit h-full">
-    <img 
-      src="https://illustrations.popsy.co/amber/digital-nomad.svg" 
-      alt="Background illustration"
-      className="h-full object-left-top"
-    />
-  </div>
-</div>
-
+                <div className="absolute inset-0 z-0 opacity-10">
+                    <div className="absolute top-0 left-0 w-fit h-full">
+                        <img 
+                            src="https://illustrations.popsy.co/amber/digital-nomad.svg" 
+                            alt="Background illustration"
+                            className="h-full object-left-top"
+                        />
+                    </div>
+                </div>
 
                 {/* Decorative elements */}
                 <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-purple-50/80 to-transparent z-0"></div>
@@ -66,7 +65,7 @@ const Users = () => {
                                     <path d="M12 12c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 8c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
                                 </svg>
                             </div>
-                            <h1 className="text-4xl font-light text-purple-900/90 mb-3 relative">
+                            <h1 className="text-4xl font-medium text-purple-900 mb-3 relative">
                                 Connect with Friends
                             </h1>
                             <p className="text-lg text-purple-700/70 max-w-md mx-auto relative">
@@ -124,28 +123,28 @@ const Users = () => {
                                     ))
                                 ) : (
                                     <div className="p-10 text-center relative">
-    <div className="absolute inset-0 flex items-center justify-center opacity-15 z-0">
-        <img 
-            src="https://illustrations.popsy.co/amber/chatting.svg" 
-            alt="Loading illustration"
-            className="w-64 h-auto opacity-30"
-        />
-    </div>
-    <div className="relative z-10">
-        <div className="inline-block p-4 rounded-full bg-purple-100/50 mb-4 shadow-inner">
-            <div className="h-8 w-8">
-                <svg className="animate-spin h-8 w-8 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-            </div>
-        </div>
-        <p className="text-purple-700/70">Loading contacts...</p>
-        <div className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-400/30 to-purple-500/30 text-transparent rounded-full shadow-md inline-block">
-            Loading...
-        </div>
-    </div>
-</div>
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-15 z-0">
+                                            <img 
+                                                src="https://illustrations.popsy.co/amber/chatting.svg" 
+                                                alt="Loading illustration"
+                                                className="w-64 h-auto opacity-30"
+                                            />
+                                        </div>
+                                        <div className="relative z-10">
+                                            <div className="inline-block p-4 rounded-full bg-purple-100/50 mb-4 shadow-inner">
+                                                <div className="h-8 w-8">
+                                                    <svg className="animate-spin h-8 w-8 text-purple-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <p className="text-purple-700/70">Loading contacts...</p>
+                                            <div className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-400/30 to-purple-500/30 text-transparent rounded-full shadow-md inline-block">
+                                                Loading...
+                                            </div>
+                                        </div>
+                                    </div>
                                 )}
                             </div>
                         </div>

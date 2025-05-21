@@ -37,19 +37,19 @@ const Home = () => {
     <>
       <Navbar Username={UserName} LogOutFunc={handleLogout} />
 
-      <div className="min-h-screen bg-gradient-to-br from-ivory-50 to-lavender-50">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-purple-100">
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="text-center">
-            {/* Header with refined typography */}
-            <h1 className="text-4xl font-medium text-charcoal-black mb-4">
-              Welcome back, <span className="text-muted-green">{UserName}</span>
+            {/* Header with purple theme typography */}
+            <h1 className="text-4xl font-medium text-purple-900 mb-4">
+              Welcome back, <span className="text-purple-600">{UserName}</span>
             </h1>
-            <p className="text-lg text-warm-beige mb-12">
+            <p className="text-lg text-purple-700/80 mb-12">
               Your conversations await
             </p>
 
-            {/* Illustration with soft shadow */}
-            <div className="max-w-md mx-auto mb-12 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            {/* Illustration with purple-themed shadow */}
+            <div className="max-w-md mx-auto mb-12 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
               <img
                 src="https://illustrations.popsy.co/amber/digital-nomad.svg"
                 alt="Chat illustration"
@@ -57,16 +57,16 @@ const Home = () => {
               />
             </div>
 
-            {/* Primary CTA button (lavender accent) */}
+            {/* Primary CTA button (purple gradient to match login) */}
             <button
               onClick={() => navigate("/users")}
-              className="bg-soft-lavender hover:bg-opacity-90 text-ivory-white font-medium py-3 px-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
             >
               Browse Contacts
             </button>
 
-            {/* Subtle prompt */}
-            <p className="mt-8 text-sm text-charcoal-black opacity-70">
+            {/* Subtle prompt with purple theme */}
+            <p className="mt-8 text-sm text-purple-700/70">
               Tap to reconnect or start new
             </p>
           </div>
@@ -76,4 +76,4 @@ const Home = () => {
   );
 };
 
-export default Home;  
+export default Home;
