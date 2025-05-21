@@ -122,7 +122,7 @@ const Navbar = ({ LogOutFunc, Username }) => {
             >
               About
             </Link>
-            {Username ? (
+            
               <button
                 onClick={() => {
                   LogOutFunc();
@@ -132,24 +132,8 @@ const Navbar = ({ LogOutFunc, Username }) => {
               >
                 Logout
               </button>
-            ) : (
-              <>
-                <Link
-                  to="/login"
-                  className="block px-4 py-3 rounded-lg text-base font-medium text-purple-800 hover:bg-purple-50 transition duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/register"
-                  className="block px-4 py-3 rounded-lg text-base font-medium bg-gradient-to-r from-purple-400 to-purple-500 text-white hover:from-purple-500 hover:to-purple-600 shadow-md transition duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Register
-                </Link>
-              </>
-            )}
+
+            
           </div>
         </div>
       )}
