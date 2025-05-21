@@ -31,7 +31,7 @@ const Users = () => {
                 setUid(user.uid)
                 GettingData(user.uid)
             } else {
-                navigate("./login")
+                navigate("/")
             }
         })
     }, [])
