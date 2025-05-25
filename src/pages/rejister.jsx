@@ -16,6 +16,14 @@ const Register = () => {
     const docRef = await addDoc(collection(db, 'users'), {
       Name: Fullname,
       Userid: Uid,
+      Freinds: [],
+      Requests: [],
+      CreatedAt: new Date().toISOString(),
+      ProfilePic: '',
+      CoverPic: '',
+      Bio: '',
+      Email: Email,
+      Notifications: []
     });
 
     console.log('Document written with ID: ', docRef.id);
